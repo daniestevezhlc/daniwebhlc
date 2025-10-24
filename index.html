@@ -646,7 +646,29 @@
         sessionStorage.setItem('sesion_larga_elapsed', ( (parseInt(sessionStorage.getItem('sesion_larga_elapsed')||'0',10)) + elapsed ));
       });
     })();
-</script>
+  </script>
+  <script>
+    (function(){
+      // Número de páginas que deben verse para cumplir el objetivo
+      var UMBRAL_PAGINAS = 3;
+    
+      // Contador guardado por sesión
+      var vistas = parseInt(sessionStorage.getItem('paginas_vistas') || '0', 10);
+      vistas++;
+      sessionStorage.setItem('paginas_vistas', vistas);
+    
+      // Si llega o supera el umbral y aún no se envió el evento
+      if (vistas >= UMBRAL_PAGINAS && !sessionStorage.getItem('evento_paginas_enviado')) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'paginas_por_sesion', {
+            'event_category': 'engagement',
+            'event_label': UMBRAL_PAGINAS + '_paginas'
+          });
+        }
+        sessionStorage.setItem('evento_paginas_enviado', '1');
+      }
+    })();
+    </script>
 
   </body>
 </html>
