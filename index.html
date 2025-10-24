@@ -54,6 +54,7 @@
           <li>
             <a
               href="#"
+              id="contact-link"
               class="nav-link hover:bg-lime-900 inline-block !px-5 !py-1 rounded-sm hover:text-white focus-within:text-white"
             >
               Contacto
@@ -669,6 +670,28 @@
       }
     })();
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const contactLink = document.getElementById('contact-link');
+        
+        if (contactLink) {
+          contactLink.addEventListener('click', function(event) {
+            // Enviar evento a Google Analytics 4
+            if (typeof gtag === 'function') {
+              gtag('event', 'click_contacto', {
+                event_category: 'interaccion_usuario',
+                event_label: 'Clic en botón de contacto',
+                value: 1
+              });
+              console.log('Evento GA4 enviado: click_contacto');
+            } else {
+              console.warn('gtag no está disponible');
+            }
+          });
+        }
+      });
+    </script>
+
 
   </body>
 </html>
