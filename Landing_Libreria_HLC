@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómics Online | Especial Padres Almería</title>
+    <style>
+        :root { --brand-color: #e63946; --action-color: #457b9d; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f1faee; color: #1d3557; }
+        header { background: var(--brand-color); color: white; padding: 1.5rem; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .main-content { max-width: 800px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 10px; text-align: center; }
+        .coupon-code { font-size: 2rem; color: var(--brand-color); font-weight: bold; border: 2px dashed #ccc; padding: 10px; margin: 20px 0; display: inline-block; }
+        .buy-button { background: var(--action-color); color: white; padding: 20px 40px; text-decoration: none; border-radius: 50px; font-size: 1.2rem; display: inline-block; transition: 0.3s; }
+        .buy-button:hover { background: #1d3557; }
+        .footer-info { font-size: 0.8rem; color: #666; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Librería Online: Cultura en Familia</h1>
+    </header>
+    <div class="main-content">
+        <h2>Fomenta la lectura desde casa</h2>
+        <p>Gracias a la subvención del <strong>Ayuntamiento de Almería</strong>, disfruta de un descuento exclusivo en nuestra sección de cómics y novelas gráficas.</p>
+        <div class="coupon-code">ALMERIA-COMIC-26</div>
+        <p>Introduce este código al finalizar tu compra online.</p>
+        <a href="https://tudominio.com/tienda-comics" class="buy-button">IR A LA TIENDA ONLINE</a>
+        <div class="footer-info">
+            *Válido solo para residentes en Almería de 25 a 40 años. Envío gratuito en 24h.
+        </div>
+    </div>
+</body>
+</html>
